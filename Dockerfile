@@ -9,15 +9,20 @@ COPY src/config ./
 COPY .npmrc ./
 COPY package*.json ./
 
-# Build project
+#Install dependences
 RUN npm i
+RUN npm install -g typescript
+
 
 # Copy app source
-COPY www ./
+COPY ./ ./
+
+#Build project
+RUN tsc
 
 # Bind the port that the image will run on
 EXPOSE 8080
 
 # Define the Docker image's behavior at runtime
-CMD ["node", "server.js"]
+CMD ["node","./www/server.js" ]
 
