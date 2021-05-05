@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: udagram-user-api
-        image: jooankrah/udagram-user-api-Image:latest
+        image: jooankrah/udagram-user-api-image:latest
         ports:
         - containerPort: 80
